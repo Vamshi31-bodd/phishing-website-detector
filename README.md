@@ -1,18 +1,19 @@
 # 🔐 Phishing Website Detector
 
-A machine-learning based web application that analyzes website URLs and predicts whether they are potentially phishing or legitimate.
+A machine-learning based web application that analyzes website URLs and predicts whether they are potentially **phishing** or **legitimate**.
 
-## Features
+## 🚀 Features
 
 - URL-based phishing detection
 - Machine Learning classification
-- Random Forest algorithm
-- URL feature extraction
-- Prediction confidence
+- Random Forest Classifier
+- Custom URL feature extraction
+- Prediction confidence score
 - Flask web interface
-- Input URL validation
+- URL validation
+- Simple and responsive interface
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - Python
 - Pandas
@@ -23,58 +24,64 @@ A machine-learning based web application that analyzes website URLs and predicts
 - CSS
 - Joblib
 
-## Project Structure
+## 🧠 How It Works
 
-phishing_website_detector/
+1. User enters a website URL.
+2. The application extracts security-related characteristics from the URL.
+3. The extracted features are passed to a trained Random Forest model.
+4. The model predicts whether the URL is potentially phishing or legitimate.
+5. The result and prediction confidence are displayed on the web interface.
 
-├── dataset/
+## 📊 Machine Learning Model
+
+**Algorithm:** Random Forest Classifier
+
+The model was trained using URL-based features such as:
+
+- URL length
+- Domain length
+- Path length
+- HTTPS usage
+- IP address detection
+- Subdomain count
+- Digit and letter counts
+- Special characters
+- Suspicious characters
+- Suspicious words
+- Query length
+- URL entropy
+- Character ratios
+
+### Model Performance
+
+Accuracy on a random stratified test split:
+
+**99.47%**
+
+> Note: This accuracy is based on a random train/test split of the dataset and should not be interpreted as guaranteed real-world detection accuracy.
+
+## 📂 Project Structure
+
+```text
+phishing-website-detector/
+│
 ├── models/
 │   └── phishing_model.pkl
+│
 ├── src/
 │   ├── feature_extraction.py
 │   └── predict.py
+│
 ├── static/
 │   └── style.css
+│
 ├── templates/
 │   └── index.html
+│
 ├── app.py
 ├── train_model.py
 ├── explore_data.py
+├── check_model.py
 ├── requirements.txt
-└── README.md
-
-## Dataset
-
-The project uses the PhiUSIIL Phishing URL Dataset.
-
-The model uses URL-based features extracted from the dataset.
-
-## Machine Learning Model
-
-Algorithm:
-
-Random Forest Classifier
-
-The current test accuracy is approximately:
-
-99.47%
-
-## How to Run
-
-Install the required packages:
-
-pip install -r requirements.txt
-
-Start the application:
-
-python app.py
-
-Open the following address in your browser:
-
-http://127.0.0.1:5000
-
-Enter a URL and click "Check Website".
-
-## Important Note
-
-The prediction is based on machine-learning features extracted from the URL. A high confidence score does not guarantee that a website is safe or malicious. Users should verify suspicious websites using additional security tools and trusted sources.
+├── README.md
+└── .gitignore
