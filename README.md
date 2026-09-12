@@ -1,6 +1,12 @@
 # 🔐 Phishing Website Detector
 
 A machine-learning based web application that analyzes website URLs and predicts whether they are potentially **phishing** or **legitimate**.
+
+## 🌐 Live Demo
+
+🚀 **Try the application:**  
+https://phishing-website-detector-xrsq.onrender.com
+
 ## 🖥️ Project Preview
 
 ![Phishing Website Detector](screenshot.png)
